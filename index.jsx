@@ -51,26 +51,49 @@ function initGameBoard(){
   }
 }
 
-function App() {
-  return (
-    <div>
-      <h1>Buscaminas</h1>
-      <button onClick={initGameBoard}>Iniciar Juego</button>
-      <table id="tablero">
-      <tbody>
-        {Array.from({ length: ALTO }, (_, i) => (
-          <tr key={i}>
-            {Array.from({ length: ANCHO }, (_, j) => (
-              <td key={j} className="celda">
-                {GAME_BOARD[i][j].mine ? "*" : GAME_BOARD[i][j].neighborMines}
-              </td>
+const SINGLETON = {}
+
+class App extends React.Component {
+  render(){
+    return (
+      <div>
+        <h1>Buscaminas</h1>
+        <button onClick={() => {
+          initGameBoard();
+          SINGLETON.TBODY.forceUpdate();
+        }}>Iniciar Juego</button>
+        <table id="tablero">
+          <this.TBodyMinesweeper />
+        </table>
+      </div>
+    );
+  }
+
+  TBodyMinesweeper() {
+    const TBODY = class extends React.Component {
+      componentDidMount() {
+        SINGLETON.TBODY = this;
+      }
+      render() {
+        return (
+          <tbody>
+            {Array.from({ length: ALTO }, (_, i) => (
+              <tr key={i}>
+                {Array.from({ length: ANCHO }, (_, j) => (
+                  <td key={j} className={`celda col-${j} row-${i}
+                  ${["even", "odd"][(i+j)%2]}`}>
+                    {GAME_BOARD[i][j].mine ? "*" : GAME_BOARD[i][j].neighborMines}
+                  </td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-    </div>
-  );
+          </tbody>
+
+        );
+      }
+    };
+    return <TBODY />;
+  }
 }
 
 
