@@ -82,7 +82,10 @@ class App extends React.Component {
                 {Array.from({ length: ANCHO }, (_, j) => (
                   <td key={j} className={`celda col-${j} row-${i}
                   ${["even", "odd"][(i+j)%2]}`}>
-                    {GAME_BOARD[i][j].mine ? "*" : GAME_BOARD[i][j].neighborMines}
+                  {GAME_BOARD[i][j].mine ? 
+                    (<img src="img/mine.svg" alt="*" width={SIDE_CELL * 0.8} height={SIDE_CELL * 0.8} />)
+                   : 
+                  (!GAME_BOARD[i][j].mine && GAME_BOARD[i][j].neighborMines)}
                   </td>
                 ))}
               </tr>

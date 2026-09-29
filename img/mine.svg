@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges">
+  <rect width="31" height="31" fill="none"></rect>
+
+  <!-- Píxeles negros -->
+  <g fill="#000000">
+    <rect x="14" y="0" width="3" height="4"></rect>
+    <rect x="5" y="4" width="2" height="3"></rect>
+    <rect x="9" y="4" width="13" height="3"></rect>
+    <rect x="24" y="4" width="3" height="3"></rect>
+    <rect x="7" y="7" width="17" height="2"></rect>
+    <rect x="5" y="9" width="4" height="5"></rect>
+    <rect x="14" y="9" width="12" height="5"></rect>
+    <rect x="0" y="14" width="31" height="3"></rect>
+    <rect x="5" y="17" width="22" height="5"></rect>
+    <rect x="7" y="22" width="17" height="2"></rect>
+    <rect x="5" y="24" width="2" height="3"></rect>
+    <rect x="9" y="24" width="13" height="3"></rect>
+    <rect x="24" y="24" width="3" height="3"></rect>
+    <rect x="14" y="27" width="3" height="4"></rect>
+  </g>
+
+  <!-- Brillo blanco -->
+  <rect x="9" y="9" width="5" height="5" fill="#FFFFFF"></rect>
+</svg>
